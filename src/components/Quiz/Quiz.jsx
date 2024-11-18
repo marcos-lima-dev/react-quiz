@@ -64,17 +64,17 @@ const Quiz = () => {
   };
 
   const progressBarStyle = {
-    background: `linear-gradient(to right, #ffffff, #22c55e ${(score / questions.length) * 100}%)`,
+    background: `linear-gradient(to right, #1a1a1a, #22c55e ${(score / questions.length) * 100}%)`,
     transition: 'all 0.3s ease'
   };
 
   if (showResult) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[url('/background-pattern.svg')] bg-repeat bg-[length:800px_800px] p-4">
-        <div className="p-6 bg-white/90 backdrop-blur-sm rounded shadow-lg max-w-lg w-full text-center">
+        <div className="p-6 bg-black/80 backdrop-blur-sm rounded shadow-lg max-w-lg w-full text-center text-white">
           <h2 className="text-2xl font-bold mb-4">Resultado Final</h2>
           <p className="text-xl mb-4">Você acertou {score} de {questions.length} questões!</p>
-          <div className="w-full rounded-full h-2 mb-4 border border-gray-200">
+          <div className="w-full rounded-full h-2 mb-4 border border-gray-700">
             <div 
               className="h-2 rounded-full"
               style={progressBarStyle}
@@ -82,7 +82,7 @@ const Quiz = () => {
           </div>
           <button 
             onClick={resetQuiz}
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
           >
             Jogar Novamente
           </button>
@@ -93,17 +93,17 @@ const Quiz = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[url('/background-pattern.svg')] bg-repeat bg-[length:800px_800px] p-4">
-      <div className="p-6 bg-white/90 backdrop-blur-sm rounded shadow-lg max-w-lg w-full">
+      <div className="p-6 bg-black/80 backdrop-blur-sm rounded shadow-lg max-w-lg w-full text-white">
         <h1 className="text-2xl font-bold mb-4">Quiz Estados e Capitais</h1>
         
         <div className="mb-6">
-          <div className="w-full rounded-full h-2 border border-gray-200">
+          <div className="w-full rounded-full h-2 border border-gray-700">
             <div 
               className="h-2 rounded-full"
               style={progressBarStyle}
             />
           </div>
-          <p className="text-sm text-gray-600 mt-2">
+          <p className="text-sm text-gray-400 mt-2">
             Questão {currentQuestion + 1} de {questions.length} | Acertos: {score}
           </p>
         </div>
@@ -120,11 +120,11 @@ const Quiz = () => {
                 w-full p-3 text-left rounded border-2 transition-all duration-200
                 ${selectedAnswer 
                   ? option === questions[currentQuestion].capital
-                    ? 'bg-green-100 border-green-500'
+                    ? 'bg-green-900/50 border-green-500 text-white'
                     : option === selectedAnswer
-                      ? 'bg-red-100 border-red-500'
-                      : 'bg-gray-50 border-gray-200'
-                  : 'bg-gray-50 border-gray-200 hover:border-gray-400'
+                      ? 'bg-red-900/50 border-red-500 text-white'
+                      : 'bg-gray-900/50 border-gray-700 text-gray-300'
+                  : 'bg-gray-900/50 border-gray-700 text-gray-300 hover:border-gray-500'
                 }
               `}
             >
@@ -136,8 +136,8 @@ const Quiz = () => {
         {feedback && (
           <div className={`mt-4 p-3 rounded ${
             selectedAnswer === questions[currentQuestion].capital 
-              ? 'bg-green-100 text-green-800' 
-              : 'bg-red-100 text-red-800'
+              ? 'bg-green-900/50 text-green-400' 
+              : 'bg-red-900/50 text-red-400'
           }`}>
             {feedback}
           </div>
