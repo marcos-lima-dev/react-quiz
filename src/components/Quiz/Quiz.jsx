@@ -93,7 +93,7 @@ const Quiz = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[url('/background-pattern.svg')] bg-repeat bg-[length:800px_800px] p-4">
-      <div className="p-6 bg-black/80 backdrop-blur-sm rounded shadow-lg max-w-lg w-full text-white">
+      <div className="p-6 bg-black/90 backdrop-blur-sm rounded shadow-lg max-w-lg w-full text-white">
         <h1 className="text-2xl font-bold mb-4">Quiz Estados e Capitais</h1>
         
         <div className="mb-6">
