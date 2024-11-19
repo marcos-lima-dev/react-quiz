@@ -122,7 +122,7 @@ const Quiz = () => {
         </div>
 
         <p className="text-xl mb-6 font-medium">
-          Qual é a capital de {questions[currentQuestion].state}?
+          Qual é a Capital de {questions[currentQuestion].state}?
         </p>
 
         <div className="space-y-3">
